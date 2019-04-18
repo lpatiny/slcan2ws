@@ -1,14 +1,14 @@
 'use strict';
-var slcan = require('./lib/slcan');
-var frame = require('./lib/frame');
-var app = require('express')();
-var ws = require('express-ws')(app);
-var config = require('./package')
+const slcan = require('./lib/slcan');
+const frame = require('./lib/frame');
+const app = require('express')();
+const ws = require('express-ws')(app);
+const config = require('./package').config;
 
 app.ws('/', (ws, req) => {
   console.log('websocket connection')
 
-  var can = new slcan(config.tty,config.can_speed,config.tty_baudrate, function(frame){
+  var can = new slcan(config.tty,config.can_bitrate,config.tty_baudrate, function(frame){
     ws.send(JSON.stringify(frame))
   })
 

@@ -14,7 +14,7 @@
   },
   "config": {
     "tty":"/dev/cu.usbmodem3031",
-    "tty_baudrate":"115200",
-    "can_bitrate":"6"
+    "tty_baudrate":115200,
+    "can_bitrate":6
   }
 }
