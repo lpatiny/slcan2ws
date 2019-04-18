@@ -3,12 +3,12 @@ var slcan = require('./lib/slcan');
 var frame = require('./lib/frame');
 var app = require('express')();
 var ws = require('express-ws')(app);
-
+var config = require('./package')
 
 app.ws('/', (ws, req) => {
   console.log('websocket connection')
 
-  var can = new slcan('/dev/cu.usbmodem3031',6,115200, function(frame){
+  var can = new slcan(config.tty,config.can_speed,config.tty_baudrate, function(frame){
     ws.send(JSON.stringify(frame))
   })
 

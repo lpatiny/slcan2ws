@@ -11,5 +11,10 @@
     "express": "^4.16.4",
     "express-ws": "^4.0.0",
     "serialport": "^7.1.4"
+  },
+  "config": {
+    "tty":"/dev/cu.usbmodem3031",
+    "tty_baudrate":"115200",
+    "can_bitrate":"6"
   }
 }
