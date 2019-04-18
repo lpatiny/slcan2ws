@@ -1,6 +1,8 @@
 # slcan2ws
 
-## Quickstart
+Forwards CAN frames from an SLCAN adapter to Websockets listeners and back.
+
+## Quickstart
 1. `npm install`
 2. set your serial port, baudrate and CAN speed in `package.json`
 2. `npm start`
@@ -19,7 +21,6 @@ You can send messages to the SLCAN adapter (and thus the CAN bus) by putting thi
       "id_ext_id":true,
     }
 
-
 ## Receiving
 All messages received by your SLCAN adapter will go to your websocket client.
 
@@ -33,7 +34,6 @@ All messages received by your SLCAN adapter will go to your websocket client.
       "id_ext_id":true,
       "bus":null
     }
-
 
 ## Credit
 This lib uses https://github.com/danyocom/nodeLAWICEL slcan and frame modules.
