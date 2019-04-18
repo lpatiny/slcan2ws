@@ -36,4 +36,5 @@ All messages received by your SLCAN adapter will go to your websocket client.
     }
 
 ## Credit
+
 This lib uses https://github.com/danyocom/nodeLAWICEL slcan and frame modules.
