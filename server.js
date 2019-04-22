@@ -3,7 +3,6 @@ const slcan = require('./lib/slcan');
 const frame = require('./lib/frame');
 const app = require('express')();
 const ws = require('express-ws')(app);
-const config = require('./package').config;
 
 
 let can = new slcan(process.env.SERIAL,process.env.CANSPEED,process.env.BAUD)
