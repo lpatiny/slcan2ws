@@ -6,7 +6,7 @@ const ws = require('express-ws')(app);
 const config = require('./package').config;
 
 
-let can = new slcan(process.env.SERIAL,config.can_bitrate,config.tty_baudrate)
+let can = new slcan(process.env.SERIAL,process.env.CANSPEED,process.env.BAUD)
 let alreadyConnected = false
 
 app.ws('/', (ws, req) => {
