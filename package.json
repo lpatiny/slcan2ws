@@ -2,7 +2,7 @@
   "name": "slcan2ws",
   "description": "Forwards CAN frames from an SLCAN adapter to Websockets listeners and back.",
   "author": "Sam Sulaimanov <sam@octanis.ch>",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
