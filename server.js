@@ -5,14 +5,35 @@ const app = require('express')();
 const ws = require('express-ws')(app);
 const config = require('./package').config;
 
+
+let can = new slcan(process.env.SERIAL,config.can_bitrate,config.tty_baudrate)
+let alreadyConnected = false
+
 app.ws('/', (ws, req) => {
-  console.log('websocket connection')
 
-  var can = new slcan(config.tty,config.can_bitrate,config.tty_baudrate, function(frame){
-    ws.send(JSON.stringify(frame))
+  if(!alreadyConnected){
+    console.log('websocket connection')
+    alreadyConnected = true
+
+    can.recvFrameCallback = function(frame){
+      
+      if(process.env.DEBUG){
+        console.log(frame)
+      }
+
+      ws.send(JSON.stringify(frame))
+    }
+
+    can.open()  
+  }else{
+    console.log("single user connection allowed only")
+  }
+
+  ws.on('close', function(msg) {
+    can.close()
+    alreadyConnected = false
   })
-
-  can.open()
+  
 
   ws.on('message', function(msg) {
 
@@ -27,6 +48,7 @@ app.ws('/', (ws, req) => {
 
     can.send(can_frame)
   });
+
 
 
 });
