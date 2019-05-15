@@ -42,6 +42,8 @@ You can install the python tool to check the expected result: https://uavcan.org
 The instructions that can be received and send can be found in the file:
 https://github.com/cvra/CAN-USB-dongle-fw/blob/master/src/slcan.c#L226
 
+SLCAN description can be found on: http://www.can232.com/docs/can232_v3.pdf
+
 
 ## Credit
 
