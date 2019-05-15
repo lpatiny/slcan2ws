@@ -35,6 +35,13 @@ All messages received by your SLCAN adapter will go to your websocket client.
       "bus":null
     }
 
+## Developements tools
+
+You can install the python tool to check the expected result: https://uavcan.org/GUI_Tool/Overview/
+
+The instructions that can be received and send can be found in the file:
+https://github.com/cvra/CAN-USB-dongle-fw/blob/master/src/slcan.c#L226
+
 
 ## Credit
 
